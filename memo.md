@@ -21,6 +21,9 @@
   * [PHP: Inotify \- Manual](https://www.php.net/inotify)
 * Ruby
   * [mat813/rb-kqueue](https://github.com/mat813/rb-kqueue)
+* Docker
+  * "However, attempts to run Intel-based containers on Apple silicon machines under emulation can crash as qemu sometimes fails to run the container. In addition, filesystem change notification APIs (inotify) do not work under qemu emulation. Even when the containers do run correctly under emulation, they will be slower and use more memory than the native equivalent."
+  * [Known issues for Docker Desktop on Mac \| Docker Documentation](https://docs.docker.com/desktop/troubleshoot/known-issues/)
 
 ## API
 
@@ -44,6 +47,13 @@
 * BSD: kqueue
   * "Kernel Queues"の略
   * FreeBSD 4.1 on July 2000 からある
+
+## 挙動メモ
+
+* listenは非同期APIのみ(変更を同期的に検知するAPIは無い)
+* watchfiles(Python)は同期/非同期APIが両方提供されている
+* fs.watch(node.js)は非同期APIのみ
+* fsnotify(Golang)は非同期APIのみ
 
 ## Sample Code
 
@@ -74,3 +84,4 @@ chokidar.watch('memo.md').on('all', (event, path) => {
 const watcher = fs.watch(".", { recursive: true });
 
 [fs: watch signals for recursive incompatibility · nodejs/node@67e067e](https://github.com/nodejs/node/commit/67e067eb0658281b647ff68a5a9e64ea2cfdb706)
+
