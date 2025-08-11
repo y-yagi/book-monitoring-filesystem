@@ -1,0 +1,10 @@
+# Zwerg Configuration File
+
+watches:
+  - path: "."
+    recursive: false
+    debounce: 2000
+    patterns:
+      - "*.re"
+    actions:
+        - command: "bundle exec rake pdf"
