@@ -43,15 +43,19 @@ GEM
     tty-color (0.6.0)
     tty-logger (0.6.0)
       pastel (~> 0.8)
+    watchcat (0.3.0-x86_64-linux)
+    zwerg (0.1.2)
+      psych (~> 5.0)
+      watchcat (~> 0.3.0)
 
 PLATFORMS
-  ruby
   x86_64-linux
 
 DEPENDENCIES
   debug
   rake
   review
+  zwerg
 
 BUNDLED WITH
    2.7.1
