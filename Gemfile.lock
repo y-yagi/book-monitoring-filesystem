@@ -36,17 +36,15 @@ GEM
       rouge
       rubyzip
       tty-logger
-    rexml (3.4.1)
+    rexml (3.4.4)
     rouge (4.6.0)
-    rubyzip (3.0.0)
+    rubyzip (3.1.0)
     stringio (3.1.7)
     tty-color (0.6.0)
     tty-logger (0.6.0)
       pastel (~> 0.8)
-    watchcat (0.3.0-x86_64-linux)
-    zwerg (0.1.2)
-      psych (~> 5.0)
-      watchcat (~> 0.3.0)
+    watchcat (0.5.1-x86_64-linux)
+      psych
 
 PLATFORMS
   x86_64-linux
@@ -55,7 +53,7 @@ DEPENDENCIES
   debug
   rake
   review
-  zwerg
+  watchcat
 
 BUNDLED WITH
    2.7.1
