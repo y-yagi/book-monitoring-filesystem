@@ -3,10 +3,11 @@
 watches:
   - path: "."
     recursive: false
-    debounce: 1000
+    debounce: 500
     filters:
       ignore_access: true
     patterns:
       - "*.re"
     actions:
         - command: "bundle exec rake pdf"
+        - command: "xdg-open book.pdf"
