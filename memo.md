@@ -46,6 +46,8 @@
   * https://learning.oreilly.com/library/view/advanced-mac-os/9780321706560/ch16.html
     * https://learning.oreilly.com/library/view/advanced-mac-os/9780321706560/ch16s06.html も参考にする
   * FSEventsはdirectory base
+  * https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/FSEvents_ProgGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005289
+  * [File System Events Programming Guide](https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/FSEvents_ProgGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005289)
 * Windows
   * USNジャーナル
     * NTFS上のファイル/フォルダに対する変更処理を記録

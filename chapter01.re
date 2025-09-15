@@ -83,15 +83,14 @@ kqueueはその後、NetBSD、OpenBSD及びDragonFly BSDでもサポートされ
 
 == macOS
 
-続いてmacOSについて見ていきましょう。macOSが使用しているDarwinというOSがBSDをベースにしている
+続いてmacOSについて見ていきましょう。macOSが使用しているDarwinというOSがBSDをベースにしているので、BSD同様、kqueueが使用出来ます。それに加えて、macOSでは、FSEvents@<fn>{FSEvents}という機能も使えるようになっています。次のセクションで詳細を見ていきましょう。
+//footnote[FSEvents][File System Eventsの略。]
+
 
 === FSEvents
 
-" you have to open each of the directories and subdirectories and add them to a kqueue"
-
-file system events
-
-Time Machine
+FSEventsは、macOSで提供されるファイルシステムイベント通知の仕組みです。FSEventsはディレクトリを単位として変更を記録・通知する設計になっており、ディレクトリ階層に対して再帰的に監視が可能です。ディレクトリを単位としているため、ファイル単位の細かなイベントは提供しないようになっています。
+また、変更をバッファし、ある程度まとめて配信するようになっています。そのため、細かなファイルの変更を検知して向かない仕様になっています。変わりに、ディレクトリ階層に対してはkqueueよりも効率的に動作するようになっており、Time Machineのようなファイルシステム全体に対して処理を行う、というような用途に適しています。
 
 == Windows
 
