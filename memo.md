@@ -1,5 +1,13 @@
 ## メモ
 
+* Linux ドキュメント: Documentation/filesystems/inotify.rst
+    * https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/inotify.rst
+  * man page (inotify(7)): https://man7.org/linux/man-pages/man7/inotify.7.html
+  * Linux カーネル ドキュメント: Documentation/filesystems/inotify.rst
+  	* https://git.kernel.org/pub/scm/linux/kernel/git/torvalds/linux.git/plain/Documentation/filesystems/inotify.rst
+  * LWN 解説記事（設計と実装上の考察）: https://lwn.net/Articles/605313/
+  * libuv/filesystem guide（libuvはfs.watch等の上でinotifyを使う実装の参考）: https://github.com/libuv/libuv/blob/master/docs/src/guide/filesystem.rst
+  * 実装（ユーザ空間インターフェース）: fs/inotify/inotify_user.c
 * nextjsはwebpackに依存
 * webpackは[paulmillr/chokidar](https://github.com/paulmillr/chokidar)を使ってる
 * chokidarはmacOS向けには[fsevents/fsevents](https://github.com/fsevents/fsevents)を使ってる。その他OS向けはnodejsのfs.watch使ってる
