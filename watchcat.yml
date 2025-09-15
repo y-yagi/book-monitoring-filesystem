@@ -10,4 +10,3 @@ watches:
       - "*.re"
     actions:
         - command: "bundle exec rake pdf"
-        - command: "xdg-open book.pdf"
