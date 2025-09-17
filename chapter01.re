@@ -83,9 +83,8 @@ kqueueはその後、NetBSD、OpenBSD及びDragonFly BSDでもサポートされ
 
 == macOS
 
-続いてmacOSについて見ていきましょう。macOSが使用しているDarwinというOSがBSDをベースにしているので、BSD同様、kqueueが使用出来ます。それに加えて、macOSでは、FSEvents@<fn>{FSEvents}という機能も使えるようになっています。次のセクションで詳細を見ていきましょう。
+続いてmacOSについて見ていきましょう。macOSが使用しているDarwinというOSがBSDをベースにしており、他のBSD同様に、kqueueがサポートされています。それに加えて、macOSでは、FSEvents@<fn>{FSEvents}という機能も使えるようになっています。次のセクションで詳細を見ていきましょう。
 //footnote[FSEvents][File System Eventsの略。]
-
 
 === FSEvents
 
