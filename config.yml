@@ -328,3 +328,7 @@ pdfmaker:
   colophon: true
   # pdfmaker:階層を使うものはここまで
 
+
+  # FIXME: タイトルが文字化けするので直接指定して回避している
+  titlefile: sty/title.tex
+
