@@ -32,6 +32,10 @@
 * Docker
   * "However, attempts to run Intel-based containers on Apple silicon machines under emulation can crash as qemu sometimes fails to run the container. In addition, filesystem change notification APIs (inotify) do not work under qemu emulation. Even when the containers do run correctly under emulation, they will be slower and use more memory than the native equivalent."
   * [Known issues for Docker Desktop on Mac \| Docker Documentation](https://docs.docker.com/desktop/troubleshoot/known-issues/)
+* kqueue
+  * man page (kqueue(2)): https://man.freebsd.org/cgi/man.cgi?query=kqueue&sektion=2
+  * man page (kevent(2)): https://man.freebsd.org/cgi/man.cgi?query=kevent&sektion=2
+  * FreeBSD Handbook: https://docs.freebsd.org/en/books/handbook/kqueue/
 
 ## API
 
