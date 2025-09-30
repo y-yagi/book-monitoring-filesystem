@@ -58,6 +58,7 @@
     * バックアップ/アンチウイルス等の処理高速化を目的とした機能
     * update sequence number
   * [ReadDirectoryChangesW function \(winbase\.h\) \- Win32 apps \| Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/win32/api/winbase/nf-winbase-readdirectorychangesw?redirectedfrom=MSDN)
+  * [FindFirstChangeNotificationA 関数 \(fileapi\.h\) \- Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-findfirstchangenotificationa)
 * BSD: kqueue
   * "Kernel Queues"の略
   * FreeBSD 4.1 on July 2000 からある
