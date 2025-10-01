@@ -9,4 +9,4 @@ watches:
     patterns:
       - "*.re"
     actions:
-        - command: "bundle exec rake pdf"
+        - command: "bundle exec rake pdf || notify-send 'PDF Build Failed' 'The PDF generation command failed with non-zero exit status'"
