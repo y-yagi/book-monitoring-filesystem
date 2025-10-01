@@ -99,4 +99,19 @@ FSEventsは、macOSで提供されるファイルシステムイベント通知�
 
 == Windows
 
-WindowsにはUSNジャーナルというボリュームに加えられた変更の記録を維持する為の機能があります。この機能を使用して、変更があったファイル
+=== FindFirstChangeNotification
+
+FindFirstChangeNotificationは、Windowsで最初に提供されたディレクトリ変更監視のAPIです。Windows 95時代から利用可能で、比較的シンプルな設計になっています。
+APIにはディレクトリを指定出来るようになっており、指定したディレクトリに変更があった場合通知がされます。ディレクトリの監視はサブディレクトリも含めて再帰的に監視することができます。
+しかし、通知は、単に変更があったかどうかだけが通知され、どのファイルに変更があったか、などの詳細情報は通知されません。
+
+=== ReadDirectoryChangesW
+
+ReadDirectoryChangesW@<fn>{ReadDirectoryChangesW}は、Windows NT 4.0で導入されたより高機能なディレクトリ変更監視APIです。
+FindFirstChangeNotificationでは得られない詳細な変更情報(変更されたファイル名や変更の内容)を取得出来たり、監視する変更の種類をフィルター出来るようになっています。
+//footnote[ReadDirectoryChangesW][末尾の"W"までが関数名です。Win32では、文字列の符号化方法がANSI互換文字列の場合末尾が"A"、ワイド文字列の場合"W"が使われるようになっています。FindFirstChangeNotificationについては、「FindFirstChangeNotificationA」と「FindFirstChangeNotificationW」の両方が存在しています。]
+
+
+=== USNジャーナル
+
+WindowsにはUSNジャーナル（Update Sequence Number Journal）というボリュームに加えられた変更の記録を維持する為の機能があります。この機能を使用して、変更があったファイル
