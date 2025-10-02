@@ -47,6 +47,19 @@ Windows	ReadDirectoryChangesW
 
 === libuv
 
-[libuv/libuv/blob/master/docs/src/guide/filesystem.rst](https://github.com/libuv/libuv/blob/master/docs/src/guide/filesystem.rst)
+libuvは、Node.jsのために開発されたクロスプラットフォームの非同期I/Oライブラリです。ファイルシステムイベント監視用の機能も提供されており、Node.jsのAPIではこちらの機能が使われています。
+当然クラスをプラットフォーム対応が行われており、下記APIが使用されるようになっています。
+
+・Linux：inofity
+
+・BSD系：kqueue
+
+・macOS： FSEvents、kqueue(使える場合はFSEventsを優先)
+
+・Windows：ReadDirectoryChangesW
+
+
+Python(uvloop)、Rust(livub-rs)などのライブラリがあり、Node.js以外でも使用されています。
+
 
 === watchman

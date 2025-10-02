@@ -64,6 +64,7 @@
 * BSD: kqueue
   * "Kernel Queues"の略
   * FreeBSD 4.1 on July 2000 からある
+* [libuv/libuv/blob/master/docs/src/guide/filesystem.rst](https://github.com/libuv/libuv/blob/master/docs/src/guide/filesystem.rst)
 
 ## 挙動メモ
 
