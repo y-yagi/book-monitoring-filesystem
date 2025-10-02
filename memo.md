@@ -57,7 +57,9 @@
     * NTFS上のファイル/フォルダに対する変更処理を記録
     * バックアップ/アンチウイルス等の処理高速化を目的とした機能
     * update sequence number
+    * [Windows USN implementation · fsnotify/fsnotify@b7b0f42](https://github.com/fsnotify/fsnotify/commit/b7b0f42a9297f2a13dc202c230eaf275abeac5d7)
   * [ReadDirectoryChangesW function \(winbase\.h\) \- Win32 apps \| Microsoft Docs](https://docs.microsoft.com/ja-jp/windows/win32/api/winbase/nf-winbase-readdirectorychangesw?redirectedfrom=MSDN)
+
   * [FindFirstChangeNotificationA 関数 \(fileapi\.h\) \- Win32 apps \| Microsoft Learn](https://learn.microsoft.com/ja-jp/windows/win32/api/fileapi/nf-fileapi-findfirstchangenotificationa)
 * BSD: kqueue
   * "Kernel Queues"の略
