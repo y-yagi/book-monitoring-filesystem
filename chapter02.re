@@ -14,7 +14,7 @@ fs.watchFile(filename[, options], listener)
 fs.watch(filename[, options][, listener])
 //}
 
-引数はどちらも同じですうね。引数だけ見ると違いがよくわからないのですが、@<code>{fs.watchFile}の方はポーリングによる実装になっており、指定出来るのはファイルだけになっています。対して、@<code>{fs.watch}はOSが提供しているAPIを使用した実装となっており、こちらはファイル・ディレクトリの両方が指定出来るようになっています。
+引数はどちらも同じですね。引数だけ見ると違いがよくわからないのですが、@<code>{fs.watchFile}の方はポーリングによる実装になっており、指定出来るのはファイルだけになっています。対して、@<code>{fs.watch}はOSが提供しているAPIを使用した実装となっており、こちらはファイル・ディレクトリの両方が指定出来るようになっています。
 
 当然OSが提供しているAPIを使用した方が情報が正確に取得出来る為、公式のドキュメントにも、可能な限り、@<code>{fs.watch}の方を使用する事が推奨されています@<fn>{fs.watch.doc}
 //footnote[fs.watch.doc][https://nodejs.org/docs/latest/api/fs.html#fs_fs_watchfile_filename_options_listener]
