@@ -19,9 +19,8 @@ fs.watch(filename[, options][, listener])
 当然OSが提供しているAPIを使用した方が情報が正確に取得出来る為、公式のドキュメントにも、可能な限り、@<code>{fs.watch}の方を使用する事が推奨されています@<fn>{fs.watch.doc}
 //footnote[fs.watch.doc][https://nodejs.org/docs/latest/api/fs.html#fs_fs_watchfile_filename_options_listener]
 
-さて、そんな@<code>{fs.watch}ですが、OS毎のAPIの差異についてはどのように対応しているのでしょうか? @<code>{fs.watch}はAPIの差異の吸収は行わず、OSが提供しているAPIをそのまま使用する、という方針を取っているようです。@<code>{fs.watch}のドキュメントの注意事項にも、"The fs.watch API is not 100% consistent across platforms, and is unavailable in some situations."との記載があります。
-
-具体的な例を見ていきましょう。@<code>{fs.watch}
+前章で説明した通り、OSが提供しているAPIには、OS毎に差異があります。@<code>{fs.watch}はAPIの差異の吸収は行わず、OSが提供しているAPIをそのまま使用する、という方針を取っているようです@<fn>{fswatch_caution}。使用しているAPIは下記の通りです。
+//footnote[fswatch_caution][@<code>{fs.watch}のドキュメントの注意事項にも、"The fs.watch API is not 100% consistent across platforms, and is unavailable in some situations."との記載があります。]
 
 //table[API][使用している機能]{
 OS	使用しているAPI
@@ -30,6 +29,9 @@ Linux	inotify
 macOS	kqueue、FSEvents
 Windows	ReadDirectoryChangesW
 //}
+
+例えば、ファイル名の取得精度です。Linux（inotify）、Windows（ReadDirectoryChangesW）では変更されたファイル名が正確に取得出来ますが、macOS（FSEvents）はディレクトリベースの通知の為、変更されたファイル名が取得出来ない事があります。
+また、@<code>{fs.watch}には再帰的に監視するかを指定する為音`recursive`オプションがあります。initifyについては、Node.jsでディレクトリツリーを走査し再帰的に監視出来るようになっていますが、OSでサポートされている他の環境に比べると、性能がおちる可能性があります。
 
 == Go
 
