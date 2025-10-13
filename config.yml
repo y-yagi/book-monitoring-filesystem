@@ -330,5 +330,5 @@ pdfmaker:
 
 
   # FIXME: タイトルが文字化けするので直接指定して回避している
-  titlefile: sty/title.tex
+#  titlefile: sty/title.tex
 
