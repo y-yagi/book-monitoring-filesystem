@@ -65,6 +65,7 @@
   * "Kernel Queues"の略
   * FreeBSD 4.1 on July 2000 からある
 * [libuv/libuv/blob/master/docs/src/guide/filesystem.rst](https://github.com/libuv/libuv/blob/master/docs/src/guide/filesystem.rst)
+* [UV\_FS\_EVENT\_RECURSIVE Linux Implementation · Issue \#1778 · libuv/libuv](https://github.com/libuv/libuv/issues/1778)
 
 ## 挙動メモ
 

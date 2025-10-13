@@ -22,6 +22,11 @@ fs.watch(filename[, options][, listener])
 前章で説明した通り、OSが提供しているAPIには、OS毎に差異があります。@<code>{fs.watch}はAPIの差異の吸収は行わず、OSが提供しているAPIをそのまま使用する、という方針を取っているようです@<fn>{fswatch_caution}。使用しているAPIは下記の通りです。
 //footnote[fswatch_caution][@<code>{fs.watch}のドキュメントの注意事項にも、"The fs.watch API is not 100% consistent across platforms, and is unavailable in some situations."との記載があります。]
 
+例えば、ファイル名の取得精度です。Linux（inotify）、Windows（ReadDirectoryChangesW）では変更されたファイル名が正確に取得出来ますが、macOS（FSEvents）はディレクトリベースの通知の為、変更されたファイル名が取得出来ない事があります。
+
+なお、以前は、再帰的な監視処理がLinuxでは動作しない、などの問題がありましたが、現在はこの問題は解消されており@<fn>{recursive_linux}、影響が大きい差異については、APIでOSの差異の吸収を行うようになっているようです。
+//footnote[recursive_linux][https://github.com/nodejs/node/pull/45098]
+
 //table[API][使用している機能]{
 OS	使用しているAPI
 -------------------------------------------------------------
@@ -29,9 +34,6 @@ Linux	inotify
 macOS	kqueue、FSEvents
 Windows	ReadDirectoryChangesW
 //}
-
-例えば、ファイル名の取得精度です。Linux（inotify）、Windows（ReadDirectoryChangesW）では変更されたファイル名が正確に取得出来ますが、macOS（FSEvents）はディレクトリベースの通知の為、変更されたファイル名が取得出来ない事があります。
-また、@<code>{fs.watch}には再帰的に監視するかを指定する為音`recursive`オプションがあります。inotifyについては、Node.jsでディレクトリツリーを走査し再帰的に監視出来るようになっていますが、OSでサポートされている他の環境に比べると、ディレクトリ階層が複雑な場合に処理が遅くなる可能性があります。
 
 === chokidar
 
@@ -44,10 +46,6 @@ Windows	ReadDirectoryChangesW
 ・ネイティブ監視が利用できない環境（一部のネットワークファイルシステム、Docker環境など）では、自動的にポーリングにフォールバック。
 
 などの機能を提供しています。
-
-macOS環境では、Node.js標準のfs.watchでFSEventsを使う代わりに、より直接的で高性能なfseventsバインディングを使用することで、ファイル名の取得精度やパフォーマンスを向上させています。
-
-
 
 == Go
 
