@@ -13,6 +13,7 @@ GEM
       pp (>= 0.6.0)
       rdoc (>= 4.0.0)
       reline (>= 0.4.2)
+    logger (1.7.0)
     nkf (0.2.0)
     pastel (0.8.0)
       tty-color (~> 0.5)
@@ -37,13 +38,13 @@ GEM
       rubyzip
       tty-logger
     rexml (3.4.4)
-    rouge (4.6.0)
-    rubyzip (3.1.0)
+    rouge (4.7.0)
+    rubyzip (3.2.2)
     stringio (3.1.7)
     tty-color (0.6.0)
     tty-logger (0.6.0)
       pastel (~> 0.8)
-    watchcat (0.5.1-x86_64-linux)
+    watchcat (0.5.2-x86_64-linux)
       psych
 
 PLATFORMS
@@ -51,6 +52,7 @@ PLATFORMS
 
 DEPENDENCIES
   debug
+  logger
   rake
   review
   watchcat
