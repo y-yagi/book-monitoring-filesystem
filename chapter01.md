@@ -61,7 +61,7 @@ inotifyはinode[^inode]ベースの通知であり、ディレクトリ単位で
 inotifyがリリースされた後、さらに高度なファイルシステム監視機能として、fanotify[^fanotify]がLinux 2.6.36で導入されました。
 [^fanotify]: fscking all notificationの略。
 
-inotifyは、イベント発生元の情報(プロセスIDやユーザID)がとれない、ゲートキーピング機能<@gatekeeping>{gatekeeping}が無い、NFSのようなリモートファイルシステムのイベントを取得出来ない、等の問題あります。
+inotifyは、イベント発生元の情報(プロセスIDやユーザID)がとれない、ゲートキーピング機能gatekeeping[^gatekeeping]が無い、NFSのようなリモートファイルシステムのイベントを取得出来ない、等の問題あります。
 
 これは、アンチウイルスソフトのようなセキュリティ関連のアプリケーションで問題になっていたそうです。そこで生まれたのがfanotifyです。
 fanotifyは、inotifyとは異なるアプローチを取っています。inotifyが特定のファイルやディレクトリを監視するのに対し、fanotifyはファイルシステム全体を監視することができます。また、先に記載した問題も解消されています。

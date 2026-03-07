@@ -8,7 +8,7 @@
 == Node.js
 
 
-Node.jsは言語本体でファイル変更監視の為のAPIが提供されています。提供されているのは@<code>{fs.watchFile}と@<code>{fs.watch}という2つのAPIです。
+Node.jsは言語本体でファイル変更監視の為のAPIが提供されています。提供されているのは@<tt>{fs.watchFile}と@<tt>{fs.watch}という2つのAPIです。
 
 
 
@@ -24,12 +24,12 @@ fs.watch(filename[, options][, listener])
 
 
 
-引数はどちらも同じですね。引数だけ見ると違いがよくわからないのですが、@<code>{fs.watchFile}の方はポーリングによる実装になっており、指定出来るのはファイルだけになっています。対して、@<code>{fs.watch}はOSが提供しているAPIを使用した実装となっており、こちらはファイル・ディレクトリの両方が指定出来るようになっています。
+引数はどちらも同じですね。引数だけ見ると違いがよくわからないのですが、@<tt>{fs.watchFile}の方はポーリングによる実装になっており、指定出来るのはファイルだけになっています。対して、@<tt>{fs.watch}はOSが提供しているAPIを使用した実装となっており、こちらはファイル・ディレクトリの両方が指定出来るようになっています。
 
 
 
-当然OSが提供しているAPIを使用した方が情報が正確に取得出来る為、公式のドキュメントにも、可能な限り、@<code>{fs.watch}の方を使用する事が推奨されています@<fn>{1}
-前章で説明した通り、OSが提供しているAPIには、OS毎に差異があります。@<code>{fs.watch}はAPIの差異の吸収は行わず、OSが提供しているAPIをそのまま使用する、という方針を取っているようです@<fn>{2}。使用しているAPIは下記の通りです。
+当然OSが提供しているAPIを使用した方が情報が正確に取得出来る為、公式のドキュメントにも、可能な限り、@<tt>{fs.watch}の方を使用する事が推奨されています@<fn>{1}
+前章で説明した通り、OSが提供しているAPIには、OS毎に差異があります。@<tt>{fs.watch}はAPIの差異の吸収は行わず、OSが提供しているAPIをそのまま使用する、という方針を取っているようです@<fn>{2}。使用しているAPIは下記の通りです。
 例えば、ファイル名の取得精度です。Linux（inotify）、Windows（ReadDirectoryChangesW）では変更されたファイル名が正確に取得出来ますが、macOS（FSEvents）はディレクトリベースの通知の為、変更されたファイル名が取得出来ない事があります。
 
 
@@ -46,7 +46,7 @@ fs.watch(filename[, options][, listener])
 
 
 先に述べたように、Node.jsは言語本体でファイル変更監視の為のAPIが提供されています。しかし、OS間で差異がある為、特に古いバージョンではそれだけを使用するのは中々困難だったようです。
-そのためか、多くのNode.jsプロジェクトでは@<href>{https://github.com/paulillr/chokidar, chokidar}というライブラリが使用されています。chokidarは、@<code>{fs.watch}の上位互換として設計されており、クロスプラットフォームでの一貫した動作を提供します。
+そのためか、多くのNode.jsプロジェクトでは@<href>{https://github.com/paulillr/chokidar,chokidar}というライブラリが使用されています。chokidarは、@<tt>{fs.watch}の上位互換として設計されており、クロスプラットフォームでの一貫した動作を提供します。
 
 
 
@@ -133,7 +133,7 @@ Watchmanは独立したデーモンプロセスとして動作し、複数のク
 
 //footnote[1][https://nodejs.org/docs/latest/api/fs.html#fs@<b>{fs}watchfile@<b>{filename}options_listener]
 
-//footnote[2][@<code>{fs.watch}のドキュメントの注意事項にも、"The fs.watch API is not 100% consistent across platforms, and is unavailable in some situations."との記載があります。]
+//footnote[2][@<tt>{fs.watch}のドキュメントの注意事項にも、"The fs.watch API is not 100% consistent across platforms, and is unavailable in some situations."との記載があります。]
 
 //footnote[3][https://github.com/nodejs/node/pull/45098]
 
