@@ -7,6 +7,7 @@ watches:
     filters:
       ignore_access: true
     patterns:
-      - "*.re"
+      - "*.md"
     actions:
+        - command: "bundle exec md2review {{file_name}} > {{file_base}}.re"
         - command: "bundle exec rake pdf || notify-send 'PDF Build Failed' 'The PDF generation command failed with non-zero exit status'"
