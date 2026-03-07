@@ -51,8 +51,6 @@ def build_all(mode)
   sh("review-compile --target=#{mode} --footnotetext --stylesheet=style.css")
 end
 
-task default: :html_all
-
 desc 'build html (Usage: rake build re=target.re)'
 task :html do
   if ENV['re'].nil?
