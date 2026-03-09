@@ -35,12 +35,14 @@ fs.watch(filename[, options][, listener])
 
 
 なお、上記のような説明があるものの、少しづつ方針が変わっているようです。例えば、以前は再帰的な監視処理がLinuxでは動作しない、という問題がありましたが、現在はこの問題は解消されており@<fn>{3}、影響が大きい差異についてはAPIでOSの差異の吸収を行うようになっているようです。
-| OS | 使用しているAPI |
-| --- | --- |
-| Linux | inotify |
-| macOS | kqueue、FSEvents |
-| Windows | ReadDirectoryChangesW |
 
+//table[tbl1][]{
+OS	使用しているAPI
+-----------------
+Linux	inotify
+macOS	kqueue、FSEvents
+Windows	ReadDirectoryChangesW
+//}
 
 === chokidar
 
@@ -108,7 +110,7 @@ Watchmanは以下のような特徴を持っています：
 
 WatchmanはプラットフォームごとにOSの最適なファイル監視APIを使用します：
 
-//table[tbl1][]{
+//table[tbl2][]{
 OS	使用しているAPI
 -----------------
 Linux	inotify
