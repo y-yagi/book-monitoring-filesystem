@@ -37,7 +37,7 @@ fs.watch(filename[, options][, listener])
 ### chokidar
 
 先に述べたように、Node.jsは言語本体でファイル変更監視の為のAPIが提供されています。しかし、OS間で差異がある為、特に古いバージョンではそれだけを使用するのは中々困難だったようです。
-そのためか、多くのNode.jsプロジェクトでは[chokidar](https://github.com/paulillr/chokidar)というライブラリが使用されています。chokidarは、`fs.watch`の上位互換として設計されており、クロスプラットフォームでの一貫した動作を提供します。
+そのためか、多くのNode.jsプロジェクトでは[chokidar](https://github.com/paulmillr/chokidar)というライブラリが使用されています。chokidarは、`fs.watch`の上位互換として設計されており、クロスプラットフォームでの一貫した動作を提供します。
 
 chokidarでは、OS間の差異を吸収し、すべてのプラットフォームで一貫したイベント通知とファイル名の取得を提供し、重複イベントやエラーなどを内部で対象するようになっています。
 

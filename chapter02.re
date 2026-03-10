@@ -48,7 +48,7 @@ Windows	ReadDirectoryChangesW
 
 
 先に述べたように、Node.jsは言語本体でファイル変更監視の為のAPIが提供されています。しかし、OS間で差異がある為、特に古いバージョンではそれだけを使用するのは中々困難だったようです。
-そのためか、多くのNode.jsプロジェクトでは@<href>{https://github.com/paulillr/chokidar,chokidar}というライブラリが使用されています。chokidarは、@<tt>{fs.watch}の上位互換として設計されており、クロスプラットフォームでの一貫した動作を提供します。
+そのためか、多くのNode.jsプロジェクトでは@<href>{https://github.com/paulmillr/chokidar,chokidar}というライブラリが使用されています。chokidarは、@<tt>{fs.watch}の上位互換として設計されており、クロスプラットフォームでの一貫した動作を提供します。
 
 
 
