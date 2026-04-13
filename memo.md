@@ -22,6 +22,11 @@
 * Pythonだと [gorakhargosh/watchdog](https://github.com/gorakhargosh/watchdog)
 * Rustだと [notify\-rs/notify](https://github.com/notify-rs/notify)
   * メモ: https://github.com/notify-rs/notify/wiki/Leaks-in-the-abstraction
+  * file-id
+    * "Utility for reading inode numbers (Linux, macOS) and file ids (Windows) that uniquely identify a file on a single computer."
+    * `device id` (Linux, macOS)または`volume serial number` (Windows)とペアでユニークな値になる
+    * notify-debouncer-fullで使ってる
+      * cacheするため
 
 * facebook: [facebook/watchman](https://github.com/facebook/watchman)
   * [facebook/jest](https://github.com/facebook/jest) はwatchman使ってる
