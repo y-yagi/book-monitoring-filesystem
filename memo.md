@@ -57,6 +57,8 @@
   * FSEventsはdirectory base
   * https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/FSEvents_ProgGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005289
   * [File System Events Programming Guide](https://developer.apple.com/library/archive/documentation/Darwin/Conceptual/FSEvents_ProgGuide/Introduction/Introduction.html#//apple_ref/doc/uid/TP40005289)
+  * 4096以上のpathがwatchされない制限があるらしい
+    * [fsevents silently fails to watch when there are more than 4096 directories](https://github.com/bazelbuild/bazel-watcher/issues/558)
 * Windows
   * USNジャーナル
     * NTFS上のファイル/フォルダに対する変更処理を記録
